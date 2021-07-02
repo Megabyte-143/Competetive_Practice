@@ -1,17 +1,10 @@
-#include <iostream>
+#include<iostream>
 #include<vector>
 using namespace std;
 
-struct two_sum
-{
-    int n1;
-    int n2;
-};
-
-
-two_sum sum(int n, int k)
-{
+std::vector<int >sumf(int n,int k){
     int a[n];
+    std::vector<int > sum;
 
     for (int i = 0; i < n; i++)
     {
@@ -32,20 +25,18 @@ two_sum sum(int n, int k)
         if (c > 0)
             break;
     }
-    two_sum sum ={x,y};
-    return sum; 
+    sum.push_back(x);
+    sum.push_back(y);
+    return sum;
 }
 
-int main()
-{
-    int n;
-    cin >> n;
-
-    int k;
-    cin >> k;
-
-   cout<<
+int main(){
+    int n;cin>>n;
+    int k ;cin>>k;
+    sumf(n,k);
+    for (int i = 0; i < n; i++)
+    {
+        cout<<sumf[i];
+    }
     
-   
-    return 0;
 }
