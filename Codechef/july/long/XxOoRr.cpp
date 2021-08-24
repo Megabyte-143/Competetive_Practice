@@ -17,7 +17,7 @@ int main()
         }
 
         double p = 0.0;
-        int c = 0, tc = 0;
+        int c = 0, tc = 1;
         for (int i = 0; i < n; i++)
         {
             double x, r;
@@ -35,18 +35,33 @@ int main()
                     }
                     else{
                         p++,i=0,c=0;
+                        tc++;
                         continue;
                     }
                 }
             }
             else{
-                tc++;
+                r = pow(2.0, p);
+                x = a[i] ^ (int)r;
+                if(x<a[i])
+                {tc++;
                 c=0,i=0;
                 p++;
-                continue;
+                continue;}
+                else{
+                    if(a[i]==0){
+                        continue;
+                    }
+                    else{
+                        p++,i=0,c=0;
+                        tc++;
+                        continue;
+                    }
+                }
             }
-            tc++;
+            
         }
+        tc++;
         cout<<tc<<endl;
         t--;
     }
